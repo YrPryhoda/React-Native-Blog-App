@@ -23,6 +23,7 @@
     },
     "android": {
       "package": "com.yrp_dev.my_blog_rn_appl",
+      "googleServicesFile": "./google-services.json",
       "versionCode": 1,
       "permissions":[
         "CAMERA",
