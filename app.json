@@ -14,10 +14,12 @@
       "fallbackToCacheTimeout": 0
     },
     "assetBundlePatterns": [
-      "assets/**/*"
+      "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.yrp-dev.my-blog-rn-appl",
+      "buildNumber": "1.0.0"
     },
     "android": {
       "package": "com.yrp_dev.my_blog_rn_appl",
