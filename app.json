@@ -1,9 +1,8 @@
 {
   "expo": {
     "name": "My Blog",
-    "slug": "rn-blog",
+    "slug": "expoio-rn-blog-for-edu",
     "version": "1.0.0",
-    "orientation": "portrait",
     "icon": "./assets/blog-icon.png",
     "splash": {
       "image": "./assets/Blog-intro.png",
@@ -17,13 +16,11 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.yrp-dev.my-blog-rn-appl",
+      "bundleIdentifier": "com.yrpdev.myblogrnappl",
       "buildNumber": "1.0.0"
     },
     "android": {
-      "package": "com.yrp_dev.my_blog_rn_appl",
-      "googleServicesFile": "./google-services.json",
+      "package": "com.yrpdev.myblogrnappl",
       "versionCode": 1,
       "permissions":[
         "CAMERA",
