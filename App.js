@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import AppLoading from 'expo-app-loading';
 import * as Font from 'expo-font'
 import AppNavigation from './src/navigation/AppNavigation';
+import { Provider } from 'react-redux'
+import store from './src/redux';
+
 
 export default function App() {
   const [fontLoaded, setFontLoaded] = useState(false)
@@ -19,8 +22,11 @@ export default function App() {
       startAsync={loadFonts}
       onFinish={() => setFontLoaded(true)}
       onError={err => console.log(err)}
-    /> 
+    />
   }
 
-  return <AppNavigation />
+  return (
+    <Provider store={store}>
+      <AppNavigation />
+    </Provider>)
 }

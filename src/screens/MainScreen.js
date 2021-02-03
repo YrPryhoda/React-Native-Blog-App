@@ -1,34 +1,25 @@
-import React from 'react'
-import { StyleSheet, Text, View, Button, FlatList } from 'react-native'
-import Post from '../components/Post';
-import { DATA } from '../data';
+import React, { useEffect } from 'react'
+import PostList from '../components/PostList';
+import { useDispatch, useSelector } from 'react-redux'
+import { loadPosts } from '../redux/actions/post';
 
 const MainScreen = ({ navigation }) => {
+  const dispatch = useDispatch();
+  const allPosts = useSelector(state => state.posts.allPosts);
+
+  useEffect(() => {
+    dispatch(loadPosts())
+  }, [dispatch])
 
   const openPostHandler = (post) => {
     navigation.navigate('Post', {
       postId: post.id,
-      date: post.date
+      date: post.date,
+      booked: post.booked
     })
   }
 
-
-  return (
-    <View style={styles.container}>
-      <FlatList
-        data={DATA}
-        keyExtractor={post => post.id.toString()}
-        renderItem={({ item }) => <Post post={item} onOpen={openPostHandler} />}
-      />
-    </View>
-  )
+  return <PostList data={allPosts} onOpen={openPostHandler} />
 }
 
 export default MainScreen
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 10,
-  }
-})

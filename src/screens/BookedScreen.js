@@ -1,20 +1,27 @@
-import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import React, { useEffect } from 'react'
+import PostList from '../components/PostList';
+import { useSelector, useDispatch } from 'react-redux';
+import { loadPosts } from '../redux/actions/post';
 
-const BookedScreen = () => {
-  return (
-    <View style={styles.container}>
-      <Text> Booked Screen</Text>
-    </View>
-  )
+const BookedScreen = ({ navigation }) => {
+  const dispatch = useDispatch();
+  const bookedPosts = useSelector(state => state.posts.bookedPosts)
+
+  useEffect(() => {
+    if (!bookedPosts.length) {
+      dispatch(loadPosts())
+    }
+  }, [dispatch])
+
+  const openPostHandler = (post) => {
+    navigation.navigate('Post', {
+      postId: post.id,
+      date: post.date,
+      booked: post.booked
+    })
+  }
+
+  return <PostList data={bookedPosts} onOpen={openPostHandler} />
 }
 
 export default BookedScreen
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center'
-  }
-})
