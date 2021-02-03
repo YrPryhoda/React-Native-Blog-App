@@ -11,8 +11,8 @@ const PostScreen = ({ navigation, route }) => {
   const post = useSelector(state => state.posts.allPosts.find(el => el.id === postId));
 
   const toggleHandler = useCallback(() => {
-    dispatch(toggleBooked(postId))
-  }, [dispatch, postId])
+    dispatch(toggleBooked(post))
+  }, [dispatch, post])
 
   const booked = useSelector(state => state.posts.bookedPosts.some(el => el.id === postId))
 

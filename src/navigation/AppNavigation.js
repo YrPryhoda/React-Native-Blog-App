@@ -34,7 +34,7 @@ const PostNavigator = () => {
         name="Main"
         component={MainScreen}
         options={{
-          title: 'My Blog',
+          title: 'My great Blog',
           headerRight: () => <AppCameraIcon />,
           headerLeft: () => <AppLogo />,
         }}
@@ -69,13 +69,10 @@ const BookedNavigator = () => {
       <BookedStack.Screen
         name="Post"
         component={PostScreen}
-        options={({ route }) => {
+        options={() => {
           return {
             title: 'Post',
-            headerRight: () => <AppStarIcon
-              onPress={route.params?.toggleHandler}
-              booked={route.params?.booked}
-            />,
+            headerRight: () => <AppStarIcon />,
           }
         }
         }

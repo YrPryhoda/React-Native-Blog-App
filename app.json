@@ -1,25 +1,31 @@
 {
   "expo": {
-    "name": "rn-blog",
+    "name": "My Blog",
     "slug": "rn-blog",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/blog-icon.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/Blog-intro.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#0ca4b2"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
     "assetBundlePatterns": [
-      "**/*"
+      "assets/**/*"
     ],
     "ios": {
       "supportsTablet": true
     },
     "android": {
+      "package": "com.yrp_dev.my_blog_rn_appl",
+      "versionCode": 1,
+      "permissions":[
+        "CAMERA",
+        "WRITE_EXTERNAL_STORAGE"
+      ],
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
